@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# EdTech Operations & Learning Management Portal
 
-## Getting Started
+## 🚀 Overview  
+A full-stack EdTech operations and learning management portal designed to streamline and manage online 1:1 tutoring for K–12 students. The platform supports four roles: **Admin**, **Operations Manager**, **Teacher**, and **Student**, offering a seamless experience from class scheduling to curriculum delivery and performance tracking.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🎯 Key Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 🔐 Role-Based Authentication  
+- Firebase Authentication with Firestore validation  
+- Secure login for Students, Teachers, Operations Managers, and Admins  
+- Separate dashboards based on user role
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 📅 Student Dashboard  
+- Weekly class schedule with time, subject, teacher, and Zoom link  
+- Curriculum page showing upcoming and past classes with:  
+  - Class title & description  
+  - Homework link (PDF, image, or text)  
+  - Notes/resource link  
+  - Class recording link  
+- Homework submission system:  
+  - Upload multiple files  
+  - One-time submission marked as “Submitted”  
+  - Stored in Firestore with student ID, class ID, and timestamp
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 👩‍🏫 Teacher Dashboard  
+- Sidebar layout with today’s class schedule  
+- Displays student name, grade, subject, time, and join link  
+- Post-class popup:  
+  - Optional personalized notes upload  
+  - Mandatory feedback to parent (auto-shared)
 
-## Learn More
+### 🛠 Operations Dashboard  
+- Today’s classes with teacher and student details  
+- Quick links to curriculum editor, student database, and teacher database  
+- Class reschedule & cancellation flows:  
+  - Teacher requests go via Ops → Student notified → Rescheduled  
+  - Parent requests go via Ops → Teacher time slots shown → Finalized  
 
-To learn more about Next.js, take a look at the following resources:
+### 📘 Curriculum Manager (Phase 2)  
+- Add, edit, delete classes by grade and subject  
+- Fields include:  
+  - Class number  
+  - Title and description  
+  - Homework, notes, and recording links  
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🧱 Tech Stack  
+- **Frontend**: Next.js, Tailwind CSS  
+- **Backend**: Firebase Authentication, Firestore, Firebase Storage  
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
